@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const raspi = require('raspi');
 const OneWire = require('raspi-onewire').OneWire;
 const request = require('request');
