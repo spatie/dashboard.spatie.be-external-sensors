@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "raspi-temperature-monitor",
+  "main": "report-temperature.js",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "request": "^2.88.0",
+    "raspi": "^5.0.2",
+    "raspi-onewire": "^1.0.1"
+  }
+}
