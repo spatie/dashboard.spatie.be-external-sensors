@@ -30,6 +30,15 @@ Finally add the script to your Raspberry's cronjobs using `crontab -e` to run on
 * * * * * node ~/raspberrypi-temperature-reporter/report-temperature.js
 ```
 
+## Deploying code changes to the Raspberry Pi
+
+If you're running a fork of this script you can use the `Envoy.blade.php` file to deploy changes to your pi after pushing.
+The deploy script will SSH to your pi and pull in new changes from the git repository.
+
+```bash
+envoy run deploy
+```
+
 ## Contributing
 
 Since this is an internal project, we don't accept pull requests at this time. If you have discovered a bug or have an idea to improve the code, open an issue first before you start coding.
