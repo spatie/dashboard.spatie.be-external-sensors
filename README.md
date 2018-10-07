@@ -27,7 +27,7 @@ node report-temperature.js
 Finally add the script to your Raspberry's cronjobs using `crontab -e` to run once per minute.
 
 ```
-* * * * * /bin/bash node /home/pi/raspberrypi-temperature-reporter/report-temperature.js
+* * * * * sudo /bin/bash -c "cd /home/pi/raspberrypi-temperature-reporter/ && node ./report-temperature.js" >> /home/pi/temperature.log 2>&1
 ```
 
 ## Deploying code changes to the Raspberry Pi
