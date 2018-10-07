@@ -2,6 +2,12 @@
   "private": true,
   "name": "raspi-temperature-monitor",
   "main": "report-temperature.js",
+  "author": "Alex Vanderbist",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spatie/raspberrypi-temperature-reporter.git"
+  },
   "dependencies": {
     "dotenv": "^6.0.0",
     "request": "^2.88.0",
