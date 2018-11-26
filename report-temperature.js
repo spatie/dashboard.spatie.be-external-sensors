@@ -1,5 +1,5 @@
-// const raspi = require('raspi');
-// const OneWire = require('raspi-onewire').OneWire;
+const raspi = require('raspi');
+const OneWire = require('raspi-onewire').OneWire;
 const request = require('request');
 require('dotenv').config();
 
