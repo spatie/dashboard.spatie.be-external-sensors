@@ -1,5 +1,5 @@
-const raspi = require('raspi');
-const OneWire = require('raspi-onewire').OneWire;
+// const raspi = require('raspi');
+// const OneWire = require('raspi-onewire').OneWire;
 const request = require('request');
 require('dotenv').config();
 
@@ -31,12 +31,10 @@ function reportTemperature(temperature)
 {
     const username = process.env.DASHBOARD_USERNAME;
     const password = process.env.DASHBOARD_PASSWORD;
-    const url = process.env.DASHBOARD_URL + '/temperature';
-    const auth = 'Basic ' + new Buffer(`${username}:${password}`).toString("base64");
+    const url = process.env.DASHBOARD_URL + '/temperature?access-token=' + process.env.DASHBOARD_ACCESS_TOKEN;
 
     request.post({
             url,
-            headers: { "Authorization": auth },
             json: { temperature },
         },
         error => {
