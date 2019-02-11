@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "dotenv": "^6.0.0",
-    "request": "^2.88.0",
+    "jvsbme680": "^1.0.4",
     "raspi": "^5.0.2",
-    "raspi-onewire": "^1.0.1"
+    "raspi-onewire": "^1.0.1",
+    "request": "^2.88.0"
   }
 }
