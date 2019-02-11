@@ -1,5 +1,5 @@
 const {BME680} = require('jvsbme680');
-const dashboardApi = require('./DashboardApi').default;
+const DashboardApi = require('./DashboardApi');
 const bme680 = new BME680('0x77');
 
 /**
@@ -91,7 +91,7 @@ async function measureAirQuality(interval) {
             const airQuality = gasResistanceScore + humidityScore;
             console.log(`Air quality (%): ${airQuality}`);
 
-            dashboardApi.reportAirQuality(airQuality);
+            (new DashboardApi()).reportAirQuality(airQuality);
 
             // Wait for the specified interval to elapse, before recalculating the air quality.
             await sleep(interval);

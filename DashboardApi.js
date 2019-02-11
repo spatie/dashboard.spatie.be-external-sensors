@@ -1,7 +1,7 @@
 require('dotenv').config();
 const request = require('request');
 
-class DashboardApi {
+module.exports = class DashboardApi {
     reportTemperature(temperature)
     {
         this.post('/temperature', { temperature });
@@ -29,5 +29,3 @@ class DashboardApi {
         );
     }
 }
-
-exports.default = new DashboardApi();

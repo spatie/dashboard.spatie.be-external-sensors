@@ -1,6 +1,6 @@
 const raspi = require('raspi');
 const OneWire = require('raspi-onewire').OneWire;
-const dashboardApi = require('./DashboardApi').default;
+const DashboardApi = require('./DashboardApi');
 
 raspi.init(() => {
     const bus = new OneWire();
@@ -24,5 +24,5 @@ function parseData(data)
 
     console.log(`temperature=${temperature}`);
 
-    dashboardApi.reportTemperature(temperature);
+    (new DashboardApi()).reportTemperature(temperature);
 }
