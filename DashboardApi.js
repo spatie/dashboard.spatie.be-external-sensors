@@ -9,7 +9,7 @@ class DashboardApi {
 
     reportAirQuality(iaq)
     {
-        this.post('/indoor-air-quality', { iaq });
+        this.post('/indoor-air-quality', { indoorAirQuality: iaq });
     }
 
     post(endpointUrl, data) {

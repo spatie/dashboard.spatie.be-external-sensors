@@ -26,6 +26,10 @@ yarn config set ignore-engines true
 yarn
 @endtask
 
+@task('restart supervisor', ['on' => 'pi'])
+sudo supervisorctl restart all
+@endtask
+
 @task('display success message', ['on' => 'localhost'])
 echo "application successfully deployed"
 @endtask
@@ -35,5 +39,6 @@ display start message
 checkout master branch
 pull changes on server
 run yarn
+restart supervisor
 display success message
 @endmacro

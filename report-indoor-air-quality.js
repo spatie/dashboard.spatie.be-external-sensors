@@ -1,5 +1,5 @@
 const {BME680} = require('jvsbme680');
-
+const dashboardApi = require('./DashboardApi');
 const bme680 = new BME680('0x77');
 
 /**
@@ -64,8 +64,8 @@ async function measureAirQuality(interval) {
         // Indefinitely calculate the air quality at the set interval.
         while (true) {
             // Measure the gas resistance and calculate the offset.
-            const gasResistance = await bme680.gasSensor.read(),
-                gasResistanceOffset = gasResistanceBaseline - gasResistance;
+            const gasResistance = await bme680.gasSensor.read();
+            const gasResistanceOffset = gasResistanceBaseline - gasResistance;
 
             // Calculate the gas resistance score as the distance from the gas resistance baseline.
             let gasResistanceScore = 0;
@@ -76,8 +76,8 @@ async function measureAirQuality(interval) {
             }
 
             // Measure the humidity and calculate the offset.
-            const humidity = await bme680.humiditySensor.read(),
-                humidityOffset = humidity - humidityBaseline;
+            const humidity = await bme680.humiditySensor.read();
+            const humidityOffset = humidity - humidityBaseline;
 
             // Calculate the humidity score as the distance from the humidity baseline.
             let humidityScore = 0;
@@ -90,6 +90,8 @@ async function measureAirQuality(interval) {
             // Calculate the air quality.
             const airQuality = gasResistanceScore + humidityScore;
             console.log(`Air quality (%): ${airQuality}`);
+
+            dashboardApi.reportAirQuality(airQuality);
 
             // Wait for the specified interval to elapse, before recalculating the air quality.
             await sleep(interval);
