@@ -58,8 +58,10 @@ async function measureAirQuality(interval) {
         const gasResistanceBaseline = await calculateGasResistanceBaseline(1000, 300000);
 
         // Define the humidity baseline nd humidity weighting.
-        const humidityBaseline = 40, // 40%RH is an optimal indoor humidity
-            humidityWeighting = 25; // use a balance between humidity and gas resistance of 25%:75%
+        const humidityBaseline = 40; // 40%RH is an optimal indoor humidity
+        const humidityWeighting = 25; // use a balance between humidity and gas resistance of 25%:75%
+
+        const startedAt = new Date();
 
         // Indefinitely calculate the air quality at the set interval.
         while (true) {
@@ -89,7 +91,7 @@ async function measureAirQuality(interval) {
 
             // Calculate the air quality.
             const airQuality = gasResistanceScore + humidityScore;
-            console.log(`Air quality (%): ${airQuality}`);
+            console.log(`Air quality (%): ${airQuality} - ${gasResistance}/${gasResistanceBaseline} (calibrated at ${startedAt.toTimeString()})`);
 
             (new DashboardApi()).reportAirQuality(airQuality);
 
