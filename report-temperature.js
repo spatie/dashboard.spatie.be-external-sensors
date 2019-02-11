@@ -1,6 +1,6 @@
 const raspi = require('raspi');
 const OneWire = require('raspi-onewire').OneWire;
-const dashboardApi = require('./DashboardApi');
+const dashboardApi = require('./DashboardApi').default;
 
 raspi.init(() => {
     const bus = new OneWire();

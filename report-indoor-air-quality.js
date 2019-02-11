@@ -1,5 +1,5 @@
 const {BME680} = require('jvsbme680');
-const dashboardApi = require('./DashboardApi');
+const dashboardApi = require('./DashboardApi').default;
 const bme680 = new BME680('0x77');
 
 /**
