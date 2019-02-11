@@ -2,7 +2,7 @@
 $pathOnPi = '/home/pi/raspberrypi-temperature-reporter';
 @endsetup
 
-@servers(['pi' => 'pi@pi', 'localhost' => '127.0.0.1'])
+@servers(['pi' => 'pi@10.0.0.53', 'localhost' => '127.0.0.1'])
 
 @task('display start message', ['on' => 'localhost'])
 echo 'start deploying on Raspberry Pi. Path: {{ $pathOnPi }}'

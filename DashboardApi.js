@@ -30,4 +30,4 @@ class DashboardApi {
     }
 }
 
-export default new DashboardApi();
+exports.default = new DashboardApi();
