@@ -97,7 +97,9 @@ async function measureAirQuality(interval) {
             const airQuality = gasResistanceScore + humidityScore;
             console.log(`Air quality (%): ${airQuality} - ${gasResistance}/${gasResistanceBaseline} (calibrated at ${startedAt.toTimeString()})`);
 
-            logStream.write(`${startedAt.toUTCString()};${gasResistance};${humidity}` + "\n");
+            const now = new Date();
+
+            logStream.write(`${now.toUTCString()};${gasResistance};${humidity}` + "\n");
 
             (new DashboardApi()).reportAirQuality(airQuality);
 
