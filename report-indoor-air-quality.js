@@ -1,6 +1,10 @@
 const {BME680} = require('jvsbme680');
 const DashboardApi = require('./DashboardApi');
+const fs = require('fs');
+
 const bme680 = new BME680('0x77');
+
+const logStream = fs.createWriteStream("iaq.csv", {flags:'a'});
 
 /**
  * Pauses code execution.
@@ -93,6 +97,8 @@ async function measureAirQuality(interval) {
             const airQuality = gasResistanceScore + humidityScore;
             console.log(`Air quality (%): ${airQuality} - ${gasResistance}/${gasResistanceBaseline} (calibrated at ${startedAt.toTimeString()})`);
 
+            logStream.write(`${startedAt.toUTCString()};${gasResistance};${humidity}` + "\n");
+
             (new DashboardApi()).reportAirQuality(airQuality);
 
             // Wait for the specified interval to elapse, before recalculating the air quality.
@@ -105,3 +111,5 @@ async function measureAirQuality(interval) {
 
 // Measure the air quality with an interval of one second.
 measureAirQuality(1000);
+
+logStream.end();
