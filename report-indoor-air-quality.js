@@ -111,5 +111,3 @@ async function measureAirQuality(interval) {
 
 // Measure the air quality with an interval of one second.
 measureAirQuality(1000);
-
-logStream.end();
