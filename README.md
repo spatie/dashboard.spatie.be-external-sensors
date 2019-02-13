@@ -1,6 +1,6 @@
-# External sensors for dashboard.spatie.be
+**WIP: This repo is a wip - indoor air quality data is not working yet**
 
-**WIP: this project is a wip - indoor air quality data is not working yet**
+# External sensors for dashboard.spatie.be
 
 Small Node.js script to report **office temperatures** and **indoor air quality** to the [Spatie dashboard](https://github.com/spatie/dashboard.spatie.be). Uses the 1-wire bus and IC2 on a Raspberry Pi to read data from external sensors. 
 
