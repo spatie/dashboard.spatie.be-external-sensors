@@ -1,6 +1,11 @@
-# Raspberry Pi temperature reporter
+# External sensors for dashboard.spatie.be
 
-Small Node.js script to report office temperatures to the [Spatie dashboard](https://github.com/spatie/dashboard.spatie.be). Uses the 1-wire bus to read temperature data from a DS18B20 sensor.
+**WIP: this project is a wip - indoor air quality data is not working yet**
+
+Small Node.js script to report **office temperatures** and **indoor air quality** to the [Spatie dashboard](https://github.com/spatie/dashboard.spatie.be). Uses the 1-wire bus and IC2 on a Raspberry Pi to read data from external sensors. 
+
+- office temperature: DS18B20 sensor over 1-wire bus
+- indoor air quality (IAQ): BME680 over IC2
 
 ## Install
 
