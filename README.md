@@ -7,6 +7,16 @@ Small Node.js script to report **office temperatures** and **indoor air quality*
 - office temperature: DS18B20 sensor over 1-wire bus
 - indoor air quality (IAQ): BME680 over IC2
 
+## Support us
+
+Learn how to create a package like this one, by watching our premium video course:
+
+[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
+
+We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
+
+We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+
 ## Install
 
 You can install the reporter on your Raspberry Pi by cloning the repository and installing its dependencies.
@@ -56,19 +66,7 @@ If you discover any security related issues, please contact freek@spatie.be inst
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-### Support us
-
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie).
-All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
-
-### Postcardware
-
-You're free to use this package, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
-
-Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
-
-We publish all received postcards [on our company website](https://spatie.be/en/opensource/postcards).
-
+#
 ## Credits
 
 - [Alex Vanderbist](https://github.com/AlexVanderbist)
